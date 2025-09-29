@@ -105,7 +105,8 @@ app.use((err, req, res, next) => {
   res.status(500).json({ message: "เกิดข้อผิดพลาดในเซิร์ฟเวอร์!" });
 });
 
-// ❌ ไม่ใช้ server.listen() บน Vercel
-// ✅ export app ให้ Vercel ใช้
-module.exports = app;
+// ✅ เริ่มเซิร์ฟเวอร์
+server.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
+});
 
